@@ -1,10 +1,3 @@
-﻿//李潔妮 110916008 Janie
-//羅楠凱 110916037 Kevin
-//王承吉 110916038 Gemini
-//簡郁桓 110916039 Hugo
-
-//大家都有修改跟平衡，所以只有寫主要負責人!工作有平均分配，讚讚!
-
 #include <iostream>
 #include <cstdlib>
 #include <string>
@@ -42,7 +35,7 @@ public:
 	explicit CallBack(void (T::* func)(T*)) { function = func; }
 };
 
-class C_Check //Hugo
+class C_Check 
 {
 public:
 	C_Check() {}
@@ -124,7 +117,7 @@ public:
 	}
 };
 
-class C_Bag //Hugo
+class C_Bag 
 {
 private:
 	int iCoin;
@@ -179,7 +172,7 @@ public:
 	}
 };
 
-class Character //Gemini
+class Character 
 {
 protected:
 	int hp;
@@ -269,7 +262,7 @@ public:
 	}
 };
 
-class C_Equipment //Hugo
+class C_Equipment 
 {
 protected:
 	int iAtk;
@@ -570,7 +563,7 @@ public:
 	}
 };
 
-class Monster : public Character //Gemini
+class Monster : public Character 
 {
 protected:
 	string MonsterName;
@@ -614,7 +607,7 @@ public:
 	virtual void reward(Player* player) {}
 };
 
-class C_Shop //Hugo //Shop Keeper:Janie 
+class C_Shop 
 {
 public:
 	void Menu(C_Bag* Bag, int iNum)
@@ -888,7 +881,7 @@ public:
 	}
 };
 
-class C_UnicornSword : public C_Equipment //Kevin
+class C_UnicornSword : public C_Equipment 
 {
 public:
 	void fightEffect(Player* player, Monster* monster)override
@@ -907,7 +900,7 @@ public:
 	}
 };
 
-class C_RubySword : public C_Equipment //Kevin
+class C_RubySword : public C_Equipment
 {
 	void resultEffect(Player* player, Monster* monster)override
 	{
@@ -921,7 +914,7 @@ class C_RubySword : public C_Equipment //Kevin
 	}
 };
 
-class C_CoinArmor : public C_Equipment//Kevin
+class C_CoinArmor : public C_Equipment
 {
 	void resultEffect(Player* player, Monster* monster)override
 	{
@@ -935,7 +928,7 @@ class C_CoinArmor : public C_Equipment//Kevin
 	}
 };
 
-class C_MermaidArmor : public C_Equipment//Kevin
+class C_MermaidArmor : public C_Equipment
 {
 	void fightEffect(Player* player, Monster* monster)override
 	{
@@ -950,7 +943,7 @@ class C_MermaidArmor : public C_Equipment//Kevin
 	}
 };
 
-class C_Craft //Hugo
+class C_Craft
 {
 private:
 	int iCountS;
@@ -1336,7 +1329,7 @@ public:
 	}
 };
 
-class Layer1Hunt : public Monster//Janie
+class Layer1Hunt : public Monster
 {
 protected:
 
@@ -1385,7 +1378,7 @@ public:
 	}
 };
 
-class Layer1Adventure : public Monster//Janie
+class Layer1Adventure : public Monster
 {
 protected:
 	void actionAttack(Character* other) override
@@ -1424,7 +1417,7 @@ public:
 	}
 };
 
-class Layer1Dungeon : public Monster //Hugo
+class Layer1Dungeon : public Monster 
 {
 protected:
 	void actionAttack(Character* other) override
@@ -1484,7 +1477,7 @@ public:
 	}
 };
 
-class Layer2Hunt : public Monster//Janie
+class Layer2Hunt : public Monster
 {
 protected:
 
@@ -1533,7 +1526,7 @@ public:
 	}
 };
 
-class Layer2Adventure : public Monster//Janie
+class Layer2Adventure : public Monster
 {
 protected:
 	void actionAttack(Character* other) override
@@ -1572,7 +1565,7 @@ public:
 	}
 };
 
-class Layer2Dungeon : public Monster//Kevin
+class Layer2Dungeon : public Monster
 {
 protected:
 	void actionAttack(Character* other) override
@@ -1632,7 +1625,7 @@ public:
 	}
 };
 
-class Layer3Hunt : public Monster//Janie
+class Layer3Hunt : public Monster
 {
 protected:
 
@@ -1681,7 +1674,7 @@ public:
 	}
 };
 
-class Layer3Adventure : public Monster//Janie
+class Layer3Adventure : public Monster
 {
 protected:
 	void actionAttack(Character* other) override
@@ -1729,7 +1722,7 @@ public:
 	}
 };
 
-class Layer3Dungeon : public Monster//Kevin
+class Layer3Dungeon : public Monster
 {
 protected:
 	int iChosen;
@@ -1816,7 +1809,7 @@ public:
 	}
 };
 
-class Layer4Special : public Monster //Janie
+class Layer4Special : public Monster 
 {
 protected:
 	void actionAttack(Character* other) override
@@ -1891,7 +1884,7 @@ private:
 
 	const vector<string> status = { "Game Over", "Playing" };
 
-	void showStartScreen() //Hugo
+	void showStartScreen() 
 	{
 		                            
 		cout << "\n\t\t╔═════════════════════════════╗" << endl;
@@ -1930,7 +1923,7 @@ private:
 		system("cls");
 	}
 
-	void showStartInfo() //Hugo
+	void showStartInfo() 
 	{
 		cout << "\n╒═══════════════════════════════ INTRODUCTION ══════════════════════════════╕" << endl;
 		cout << "│                                                                           │" << endl;
@@ -1958,7 +1951,7 @@ private:
 		cout << "╘═══════════════════════════════════════════════════════════════════════════╛" << endl;
 	}
 
-	int ChooseLayer(Player* player) //Gemini
+	int ChooseLayer(Player* player) 
 	{
 		int iState = 0;
 		string sSelect[4];
@@ -2002,7 +1995,7 @@ private:
 		}
 	}
 
-	int chooseBattleAction(int bossLayer = 0) //Gemini
+	int chooseBattleAction(int bossLayer = 0) 
 	{
 		int iState = 0;
 		string sSelect[2];
@@ -2041,7 +2034,7 @@ private:
 		}
 	}
 
-	void showBattleInfo(Player* player, Monster *monster) //Gemini
+	void showBattleInfo(Player* player, Monster *monster) 
 	{
 		string sExp = to_string(player->GetExp()) + "/" + to_string(player->GetMaxExp());
 		string sPlayerHp = to_string(player->GetHP()) + "/" + to_string(player->GetMaxHP());
@@ -2054,13 +2047,13 @@ private:
 		cout << left << setw(9) << "DEF" << left << setw(11) << player->GetDEF() << "■ " << left << setw(9) << "DEF" << left << setw(11) << monster->GetDEF() << endl;
 	}
 
-	void showPlayerInfo() //Gemini
+	void showPlayerInfo() 
 	{
 		cout << "══════ YOUR INFORMATION ══════\n" << endl;
 		player->showInfo();
 	}
 
-	void showResult()  //Gemini
+	void showResult() 
 	{
 		if (!(player->isAlive()))
 		{
@@ -2072,7 +2065,7 @@ private:
 		}
 	}
 
-	void monsterPicture(int iLayer) //Kevin
+	void monsterPicture(int iLayer) 
 	{
 		switch (iLayer)
 		{
@@ -2169,7 +2162,7 @@ public:
 		}
 	}
 
-	void MonsterCreateLayer1Hunt() //Janie
+	void MonsterCreateLayer1Hunt() 
 	{
 		int iHp = rand() % 10 + 11;
 		int iAtk = rand() % 10 + 1;
@@ -2177,7 +2170,7 @@ public:
 		monster = new Layer1Hunt(iHp, iAtk, iDfc);
 	}
 
-	void MonsterCreateLayer1Adventure()//Janie
+	void MonsterCreateLayer1Adventure()
 	{
 		int iHp = rand() % 10 + 41;
 		int iAtk = rand() % 10 + 21;
@@ -2185,7 +2178,7 @@ public:
 		monster = new Layer1Adventure(iHp, iAtk, iDfc);
 	}
 
-	void MonsterCreateLayer1Dungeon() //Kevin
+	void MonsterCreateLayer1Dungeon() 
 	{
 		int iHp = 500;
 		int iAtk = 30;
@@ -2200,7 +2193,7 @@ public:
 		monster = new Layer1Dungeon(iHp, iAtk, iDfc);
 	}
 
-	void MonsterCreateLayer2Hunt()//Janie
+	void MonsterCreateLayer2Hunt()
 	{
 		int iHp = rand() % 10 + 51;
 		int iAtk = rand() % 10 + 31;
@@ -2208,7 +2201,7 @@ public:
 		monster = new Layer2Hunt(iHp, iAtk, iDfc);
 	}
 
-	void MonsterCreateLayer2Adventure()//Janie
+	void MonsterCreateLayer2Adventure()
 	{
 		int iHp = rand() % 10 + 71;
 		int iAtk = rand() % 10 + 51;
@@ -2216,7 +2209,7 @@ public:
 		monster = new Layer2Adventure(iHp, iAtk, iDfc);
 	}
 
-	void MonsterCreateLayer2Dungeon() //Kevin
+	void MonsterCreateLayer2Dungeon() 
 	{
 		int iHp = 666;
 		int iAtk = 66;
@@ -2231,7 +2224,7 @@ public:
 		monster = new Layer2Dungeon(iHp, iAtk, iDfc);
 	}
 
-	void MonsterCreateLayer3Hunt()//Janie
+	void MonsterCreateLayer3Hunt()
 	{
 		int iHp = rand() % 10 + 81;
 		int iAtk = rand() % 10 + 61;
@@ -2239,7 +2232,7 @@ public:
 		monster = new Layer3Hunt(iHp, iAtk, iDfc);
 	}
 
-	void MonsterCreateLayer3Adventure()//Janie
+	void MonsterCreateLayer3Adventure()
 	{
 		int iHp = rand() % 10 + 101;
 		int iAtk = rand() % 10 + 81;
@@ -2247,7 +2240,7 @@ public:
 		monster = new Layer3Adventure(iHp, iAtk, iDfc);
 	}
 
-	void MonsterCreateLayer3Dungeon() //Kevin
+	void MonsterCreateLayer3Dungeon()
 	{
 		int iHp = 1109;
 		int iAtk = 160;
@@ -2262,7 +2255,7 @@ public:
 		monster = new Layer3Dungeon(iHp, iAtk, iDfc);
 	}
 
-	void MonsterCreateLayer4Special()//Janie
+	void MonsterCreateLayer4Special()
 	{
 		monster = new Layer4Special(1,0,INT_MAX);
 	}
@@ -2283,7 +2276,7 @@ public:
 		}
 	}
 
-	bool Battle(int bossLayer = 0) //Hugo
+	bool Battle(int bossLayer = 0) 
 	{
 		while (gameState() == status[1])
 		{
@@ -2331,7 +2324,7 @@ public:
 		return true;
 	}
 
-	void GameCenter() //Hugo
+	void GameCenter() 
 	{
 		C_Check Check;
 		C_Shop	Shop;
